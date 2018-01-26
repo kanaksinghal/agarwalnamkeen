@@ -52,6 +52,7 @@ body {
 }
 
 .section-title:after {
+  display: none;
   background: none repeat scroll 0 0 #fff;
   bottom: -15px;
   color: #333;
