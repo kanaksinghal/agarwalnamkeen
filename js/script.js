@@ -181,20 +181,20 @@ function parallax() {
 /*	Modal Popup
 ------------------------------------------------------*/
 
-    $('.item-wrap a').magnificPopup({
+    // $('.item-wrap a').magnificPopup({
 
-       type:'inline',
-       fixedContentPos: false,
-       removalDelay: 200,
-       showCloseBtn: false,
-       mainClass: 'mfp-fade'
+    //    type:'inline',
+    //    fixedContentPos: false,
+    //    removalDelay: 200,
+    //    showCloseBtn: false,
+    //    mainClass: 'mfp-fade'
 
-    });
+    // });
 
-    $(document).on('click', '.popup-modal-dismiss', function (e) {
-    		e.preventDefault();
-    		$.magnificPopup.close();
-    });
+    // $(document).on('click', '.popup-modal-dismiss', function (e) {
+    // 		e.preventDefault();
+    // 		$.magnificPopup.close();
+    // });
 
 
 /*----------------------------------------------------*/
@@ -203,22 +203,22 @@ function parallax() {
 
 
     $(document).ready(function() {
-     
-    $("#testimonial-slides").owlCarousel({
-     
-    navigation : false, // Show next and prev buttons
-    slideSpeed : 300,
-    paginationSpeed : 400,
-    singleItem:true
-     
-    // "singleItem:true" is a shortcut for:
-    // items : 1,
-    // itemsDesktop : false,
-    // itemsDesktopSmall : false,
-    // itemsTablet: false,
-    // itemsMobile : false
-     
-    });
+      
+      $("#testimonial-slides").owlCarousel({
+      
+      navigation : false, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+      
+      // "singleItem:true" is a shortcut for:
+      // items : 1,
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+      
+      });
      
     });
 
@@ -227,61 +227,61 @@ function parallax() {
 /*  Google Map
 ------------------------------------------------------*/
 
-    // main directions 21.2268963,72.9081193
-      map = new GMaps({
-        el: '#map', lat: 21.2268963, lng: 72.9081193, zoom: 13, zoomControl : true, 
-        zoomControlOpt: { style : 'SMALL', position: 'TOP_LEFT' }, panControl : false, scrollwheel: false
-      });
-    // add address markers
-    var infoWindow = new google.maps.InfoWindow({
-      content: '<strong>Suresh Agarwal</strong><br/>I/603, Megh Malhar Residency<br/>Nana Varachha, Surat, Gujarat 395006'
-    });
-    var marker = map.addMarker({ lat: 21.2268963, lng: 72.9081193, title: 'Suresh Agarwal',
-      infoWindow: infoWindow });
-    // infoWindow.open(map, marker);
+    // // main directions 21.2268963,72.9081193
+    //   map = new GMaps({
+    //     el: '#map', lat: 21.2268963, lng: 72.9081193, zoom: 13, zoomControl : true, 
+    //     zoomControlOpt: { style : 'SMALL', position: 'TOP_LEFT' }, panControl : false, scrollwheel: false
+    //   });
+    // // add address markers
+    // var infoWindow = new google.maps.InfoWindow({
+    //   content: '<strong>Suresh Agarwal</strong><br/>I/603, Megh Malhar Residency<br/>Nana Varachha, Surat, Gujarat 395006'
+    // });
+    // var marker = map.addMarker({ lat: 21.2268963, lng: 72.9081193, title: 'Suresh Agarwal',
+    //   infoWindow: infoWindow });
+    // // infoWindow.open(map, marker);
 
 /*----------------------------------------------------*/
 /*	contact form
 ------------------------------------------------------*/
 
-   $('form#contactForm button.submit').click(function() {
+  //  $('form#contactForm button.submit').click(function() {
 
-      $('#image-loader').fadeIn();
+  //     $('#image-loader').fadeIn();
 
-      var contactName = $('#contactForm #contactName').val();
-      var contactEmail = $('#contactForm #contactEmail').val();
-      var contactSubject = $('#contactForm #contactSubject').val();
-      var contactMessage = $('#contactForm #contactMessage').val();
+  //     var contactName = $('#contactForm #contactName').val();
+  //     var contactEmail = $('#contactForm #contactEmail').val();
+  //     var contactSubject = $('#contactForm #contactSubject').val();
+  //     var contactMessage = $('#contactForm #contactMessage').val();
 
-      var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
-               '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
+  //     var data = 'contactName=' + contactName + '&contactEmail=' + contactEmail +
+  //              '&contactSubject=' + contactSubject + '&contactMessage=' + contactMessage;
 
-      $.ajax({
+  //     $.ajax({
 
-	      type: "POST",
-	      url: "/sendEmail.php",
-	      data: data,
-	      success: function(msg) {
+	//       type: "POST",
+	//       url: "/sendEmail.php",
+	//       data: data,
+	//       success: function(msg) {
 
-            // Message was sent
-            if (msg == 'OK') {
-               $('#image-loader').fadeOut();
-               $('#message-warning').hide();
-               $('#contactForm').fadeOut();
-               $('#message-success').fadeIn();   
-            }
-            // There was an error
-            else {
-               $('#image-loader').fadeOut();
-               $('#message-warning').html(msg);
-	            $('#message-warning').fadeIn();
-            }
+  //           // Message was sent
+  //           if (msg == 'OK') {
+  //              $('#image-loader').fadeOut();
+  //              $('#message-warning').hide();
+  //              $('#contactForm').fadeOut();
+  //              $('#message-success').fadeIn();   
+  //           }
+  //           // There was an error
+  //           else {
+  //              $('#image-loader').fadeOut();
+  //              $('#message-warning').html(msg);
+	//             $('#message-warning').fadeIn();
+  //           }
 
-	      }
+	//       }
 
-      });
-      return false;
-   });
+  //     });
+  //     return false;
+  //  });
 
 
 });
